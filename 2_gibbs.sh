@@ -15,7 +15,7 @@ utils_setup_config ${CONFIG}
 # Load in subject array
 
 ${GIBBSPATH} ${input}.nii.gz ${output}_desc-gibbs.nii.gz
-
+# haha
 
 
 
