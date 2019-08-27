@@ -1,6 +1,9 @@
 ## DTI FIT -------
 
-CONFIG="dti.config"
+CONFIG=${1}
+
+source utils.sh
+utils_setup_config ${CONFIG}
 
 bvec=${dir}/${subj}/output/${subj}.bvec
 bval=${dir}/${subj}/output/${subj}.bval
