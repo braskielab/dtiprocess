@@ -1,20 +1,22 @@
 
 
 
+CONFIG="dti.config"
+
 # PATHING
 
 
-# DWI=${dir}/${subj}_AXIAL_DTI_mddw_64_SMS4_denoised.nii
-# mask=${dir}/${subj}_dwi_brain_mask.nii.gz
-# index=${dir}/index.txt
-# acqp=${dir}/acqp.txt
-# bvec=${dir}/${subj}.bvec
-# bval=${dir}/${subj}.bval
+input=${dir}/${subj}/output/${subj}_desc-gibbs.nii.gz
+mask=${dir}/${subj}_dwi_brain_mask.nii.gz
+index=${dir}/index.txt
+acqp=${dir}/acqp.txt
+bvec=${dir}/${subj}.bvec
+bval=${dir}/${subj}.bval
 
 
 # EDDY CORRECT COMMAND ON CORRECTED DWI
 
-# ${eddy_openmp_path} --imain=${DWI} --mask=${mask} --index=${index} --acqp=${acqp} --bvecs=${bvec} --bvals=${bval} --fwhm=0 --flm=quadratic --out=${dir1}/${subj}_eddy_repol --repol --ol_pos --verbose
+${EDDY_COR} --imain=${input} --mask=${mask} --index=${index} --acqp=${acqp} --bvecs=${bvec} --bvals=${bval} --fwhm=0 --flm=quadratic --out=${dir}/${subj}/output/${subj}_eddy_repol --repol --ol_pos --verbose
 
 # OUTPUT
 
