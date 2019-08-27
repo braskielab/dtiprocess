@@ -23,7 +23,7 @@ utils_setup_config ${CONFIG}
 # ----------------------------------------------------------
 
 
-cmd="/usr/local/MATLAB/R2014b/bin/matlab -nodesktop -nosplash -r 'addpath('/pathto/LPCA_tool');${matlabCall};exit'"
+cmd="${matlab} -nodesktop -nosplash -r 'addpath('${LPCA_tool}');${matlabCall};exit'"
 
 # Execute
 eval ${cmd}
