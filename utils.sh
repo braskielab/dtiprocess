@@ -7,20 +7,23 @@ utils_setup_config() {
        exit 1
      fi
 	
-#	readarray SUBJECT < ${subjectlist}
-#	readarray reference < ${referencereg}
-#	readarray regionsofinterest < ${regionsofinterest}
+	readarray SUBJECT < ${subjectlist}
 }
 
 utils_SGE_TASK_ID_SUBJ(){
 
-    if [ "$SGE_TASK_ID" == "" ]; then
-	echo "SGE_TASK_ID not set. Aborting."
-	exit 1
+    #if [ "$SGE_TASK_ID" == "" ]; then
+	#echo "SGE_TASK_ID not set. Aborting."
+	#exit 1
+    #fi
+    
+    if [ ! -d ${SGE_JOB_OUTPUTS}/${subj} ];then
+        mkdir -p ${SGE_JOB_OUTPUTS}/${subj};
     fi
-     SUBJECT=(${SUBJECT[@]})
-     idx=$((SGE_TASK_ID - 1))
-     nsubj=${#SUBJECT[@]}
-     subj=${SUBJECT[${idx}]}
-     
+
+    #source ${1} 
+    x=(${SUBJECT[@]})
+    subj=${x[$SGE_TASK_ID-1]}    
+    nsubj=${#SUBJECT[@]}
+ 
 }

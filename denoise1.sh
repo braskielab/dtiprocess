@@ -1,20 +1,15 @@
 #!/bin/bash
-
-#$ -S /bin/bash
-#$ -o /ifshome/mhapenney/logs -j y
+#$ -cwd
 
 #$ -q compute.q
 #-----------------------------------------------------------
+# CONFIG & UTILS
 
-CONFIG=${1}
-
+CONFIG="dti.config"
 source utils.sh
 
 utils_setup_config ${CONFIG}
-
-#for subj in ${SUBJECT[@]}; do
-
-# Load in subject array
+utils_SGE_TASK_ID_SUBJ
 
 # ----------------------------------------------------------
 
@@ -29,3 +24,5 @@ cmd="${matlab} -nodesktop -nosplash -r 'addpath('${LPCA_tool}');${matlabCall};ex
 eval ${cmd}
 
 # done
+
+chmod 775 *
