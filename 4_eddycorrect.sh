@@ -28,4 +28,33 @@ ${EDDY_COR} --imain=${input} --mask=${mask} --index=${index} --acqp=${acqp} --bv
 # ^2 Sufficient to call same index and acqp for each subject
 
 
+# Evan Test------------------------
+
+#-----Subject Identifier-----
+
+#for subj in $@
+#do
+
+#-----Set Pathing-----
+
+#ADPC=/ifs/loni/faculty/mbraskie/ADPC/dMRI/Scripts/Test/Eddy
+#dir=${ADPC}
+#dirI=${ADPC}
+#DWI=/ifs/loni/faculty/mbraskie/ADPC/dMRI/Scripts/Test/${subj}_desc-gibs.nii.gz
+
+#dirO=$ADPC
+#dir1=${ADPC}
+
+#mask=/ifs/loni/faculty/mbraskie/ADPC/dMRI/Scripts/Test/${subj}_dwi_brain_mask.nii.gz
+#index=/ifs/loni/faculty/mbraskie/ADPC/dMRI/Scripts/Test/index.txt
+#acqp=/ifs/loni/faculty/mbraskie/ADPC/dMRI/Scripts/Test/${subj}_acqp.txt
+#bvecs=/ifs/loni/faculty/mbraskie/ADPC/dMRI/Scripts/Test/${subj}.bvec
+#bval=/ifs/loni/faculty/mbraskie/ADPC/dMRI/Scripts/Test/${subj}.bval
+
+#-----Run eddy_openmp-----
+
+#cmd="/usr/local/fsl-5.0.11/bin/eddy_openmp --imain=${DWI} --mask=${mask} --index=${index} --acqp=${acqp} --bvecs=${bvecs} --bvals=${bval} --fwhm=0 --flm=quadratic --out=${ADPC}/${subj}_eddy_repol --repol --ol_pos --verbose"
+
+#eval $cmd
+
 
